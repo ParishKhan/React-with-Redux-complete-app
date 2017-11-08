@@ -8,7 +8,7 @@ class Home extends Component {
 			<div id="home-container">
 				<div className="row">
 					<div className="small-12 column text-center">
-						<h1>Welcome to the home page</h1>
+						<h1>Welcome to the home page pall</h1>
 					</div>
 				</div>
 			</div>
