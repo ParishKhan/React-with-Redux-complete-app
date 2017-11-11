@@ -24,15 +24,16 @@ export default {
 		loaders: [
 			{
 				test: /\.js$/,
-				include: path.join(__dirname, 'client'),
+				exclude: /node_modules/,
 				loaders: ['babel-loader']
 			}, {
 				test: /\.scss$/,
 				use: ExtractTextPlugin.extract({
 					fallback: 'style-loader',
 					use: ['css-loader', 'sass-loader']
-			})
-		}]
+				})
+			}
+		]
 	},
 	resolve: {
 		extensions: ['.js']

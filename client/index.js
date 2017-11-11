@@ -3,7 +3,7 @@ import { hydrate } from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import {AppContainer} from 'react-hot-loader';
 
-import App from './components/App';
+import App from '../app/App';
 
 const render = Component => {
   hydrate(
@@ -20,8 +20,8 @@ render(App);
 
 // Webpack Hot Module Replacement API
 if (module.hot) {
-  module.hot.accept('./components/App', () => {
-    const App = require('./components/App').default;
+  module.hot.accept('../app/App', () => {
+    const App = require('../app/App').default;
     render(App);
   });
 }
