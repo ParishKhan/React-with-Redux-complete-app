@@ -1,12 +1,16 @@
 import React from 'react';
 import { hydrate } from 'react-dom';
-import App from './components/App';
+import { BrowserRouter } from 'react-router-dom';
 import {AppContainer} from 'react-hot-loader';
+
+import App from './components/App';
 
 const render = Component => {
   hydrate(
       <AppContainer>
+        <BrowserRouter>
           <Component />
+        </BrowserRouter>
       </AppContainer>,
       document.getElementById('app'),
   )
