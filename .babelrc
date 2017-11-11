@@ -1,4 +1,10 @@
 {
 	"presets": ["env", "react"],
-	"plugins": ["react-hot-loader/babel"]
+	"plugins": [
+		["react-hot-loader/babel", "css-modules-transform", {
+			"preprocessCss": "./loaders/sass-loader.js",
+			"generateScopedName": "[hash:8]",
+			"extensions": [".scss"]
+		}]
+	]
 }

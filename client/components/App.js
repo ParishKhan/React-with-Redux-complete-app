@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Link, browserHistory } from 'react-rout
 import NavBar from './navbar/NavBar';
 import Home from './Home';
 import SignIn from './SignIn';
+import CSS from '../styles/app.scss';
 
 class App extends Component {
 	render() {

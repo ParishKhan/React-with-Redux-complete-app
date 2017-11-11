@@ -1,24 +1,23 @@
-import React, { Component } from 'react';
-import {render} from 'react-dom';
+import React from 'react';
+import { hydrate } from 'react-dom';
 import App from './components/App';
 import {AppContainer} from 'react-hot-loader';
 
-render(
+const render = Component => {
+  hydrate(
       <AppContainer>
-        <App />
+          <Component />
       </AppContainer>,
-      document.getElementById('app')
-    );
+      document.getElementById('app'),
+  )
+}
 
+render(App);
 
+// Webpack Hot Module Replacement API
 if (module.hot) {
   module.hot.accept('./components/App', () => {
     const App = require('./components/App').default;
-    render(
-      <AppContainer>
-        <App />
-      </AppContainer>,
-      document.getElementById('app')
-    );
+    render(App);
   });
 }
